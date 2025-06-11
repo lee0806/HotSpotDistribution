@@ -5,6 +5,7 @@ import ProfitFilter from "../../components/ProfitDashboardPage/ProfitFilter";
 import ProfitSearch from "../../components/ProfitDashboardPage/ProfitSearch";
 import ProfitChart from "../../components/ProfitDashboardPage/ProfitChart";
 
+// .
 const ProfitDashBoardPage = () => {
   const [capital, setCapital] = useState(0);
   const [pyeong, setPyeong] = useState(20); // 평수 상태 추가
