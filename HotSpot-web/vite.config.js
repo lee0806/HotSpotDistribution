@@ -30,4 +30,25 @@ export default defineConfig({
       'assets': '/HotSpot-web/public',
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: ({ name }) => {
+          if (/\.(gif|jpe?g|png)$/.test(name ?? '')){
+              return 'assets/images/[name]-[hash][extname]';
+          }
+
+          if (/\.svg$/.test(name ?? '')) {
+              return 'assets/icons/[name]-[hash][extname]';   
+          }
+
+          if (/\.(ttf|otf|woff|woff2|eot)$/.test(name ?? '')) {
+            return 'assets/fonts/[name]-[hash][extname]';
+          }
+
+          return 'assets/[name]-[hash][extname]';
+        },
+      },
+    },
+  },
 })
