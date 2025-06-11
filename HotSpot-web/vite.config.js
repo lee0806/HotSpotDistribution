@@ -24,5 +24,10 @@ export default defineConfig({
     '**/*.svg',
     '**/*.png',
     '**/*.jpg',
-  ]
+  ],
+  resolve: {
+    alias: {
+      'assets': '/HotSpot-web/public',
+    },
+  },
 })
