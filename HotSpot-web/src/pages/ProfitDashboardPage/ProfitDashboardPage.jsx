@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/ProfitDashboardPage/ProfitDashBoardPage.css";
+import "../../styles/ProfitDashboardPage/ProfitDashboardPage.css";
 import ProfitTitle from "../../components/ProfitDashboardPage/ProfitTitle";
 import ProfitFilter from "../../components/ProfitDashboardPage/ProfitFilter";
 import ProfitSearch from "../../components/ProfitDashboardPage/ProfitSearch";
