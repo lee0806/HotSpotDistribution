@@ -1,0 +1,349 @@
+.recommend-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+
+    padding: 64px;
+}
+
+.recommend-title {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    margin-top: 32px;
+}
+
+.recommend-additional-title {
+    font-size: 18px;
+    margin-bottom: 120px;
+}
+
+.recommend-main-container {
+    width: 100%;
+}
+
+.recommend-first-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.recommend-second-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.recommend-third-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.main-description {
+  display: flex;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.main-highlight {
+  font-size: 35px;
+  font-weight: 700;
+  color: #F28080;
+  margin: 0 5px;
+}
+
+.main-additional-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #848484;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.card-container {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    /* white-space: nowrap; */
+}
+
+.card-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    scroll-padding: 64px;
+    gap: 20px;
+    width: fit-content;
+    
+    margin: 81px 10px;
+}
+
+
+.card {
+
+
+    display: flex; /* 카드 너비 조정 */
+    flex-direction: column;
+    min-width: 425px; /* 최소 너비 설정 */
+    min-height: 247px;
+    padding: 16px;
+    background-color: #ddd;
+    border-radius: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* Unique card backgrounds */
+.card-1 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(243, 239, 232, 1); /* light blue */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-2 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(71, 33, 33, 0.5); /* soft brown */
+  background-size: cover;
+  background-blend-mode: multiply;
+  
+}
+
+.card-3 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(111, 78, 55, 0.4); /* beige/gray */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-4 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(241, 181, 181, 0.4); /* soft pink */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-5 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(229, 226, 220, 0.4); /* light gray */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-second-1 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(62, 44, 41, 0.6); /* light blue */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-second-2 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(44, 58, 82, 0.6); /* light blue */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-second-3 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(194, 112, 79, 1); /* light blue */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-second-4 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(209, 160, 84, 0.7); /* light blue */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-second-5 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(90, 42, 53, 0.7); /* light blue */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-third-1 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(25, 42, 86, 0.7); /* light blue */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-third-2 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(194, 255, 223, 0.6); /* light blue */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-third-3 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(255, 228, 122, 0.6); /* light blue */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-third-4 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(255, 162, 180, 0.5); /* light blue */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-third-5 {
+  background: url("../../../../assets/images/paper.jpg") no-repeat center center;
+  background-color: rgba(235, 235, 235, 0.6); /* light blue */
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+
+
+
+.card-active {
+  background-color: #e6f7ff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.card-number {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  font-size: 30px;
+  font-weight: 700;
+
+}
+
+.card-title {
+  font-size: 30px;
+  font-weight: 700;
+  padding-top: 30px;
+  padding-left: 20px;
+  margin-bottom: 14px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-left: 20px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.info-label {
+  font-weight: 700;
+}
+
+.info-value {
+  font-weight: 700;
+}
+
+.info-value.highlight {
+  color: #1890ff;
+  font-weight: bold;
+}
+
+.card-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  background-color: rgba(219, 234, 254, 1);
+  color: rgba(30, 64, 175, 1);
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .card-row {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 16px;
+  }
+  
+  .card {
+    flex: 0 0 260px;
+  }
+}
+
+
+/* 카드 슬라이드 애니메이션 */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 1s ease-out forwards;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.card.animate-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: all 0.5s ease-out;
+}

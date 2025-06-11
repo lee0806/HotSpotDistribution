@@ -1,0 +1,92 @@
+.search-bar {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  z-index: 1;
+}
+
+/* 입력창 & 버튼 wrapper */
+.search-input-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 2px solid #f28080;
+  border-radius: 20px;
+  background-color: white;
+  padding: 14px 19px;
+  box-sizing: border-box;
+}
+
+/* 입력창 */
+.search-input-box {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  background-color: white;
+  color: #333;
+}
+
+.search-input-box::placeholder {
+  color: #aaa;
+}
+
+/* 동그란 버튼 */
+.search-circle-button {
+  background-color: #f28080;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-circle-button:hover {
+  background-color: #e26767;
+}
+
+/* 자동완성 리스트 */
+.autocomplete-list {
+  margin-top: 6px;
+  padding: 0;
+  width: 100%;
+  max-width: 768px;
+  list-style: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 10;
+  position: absolute;
+  top: 100%;
+}
+
+.autocomplete-list li {
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.autocomplete-list li:last-child {
+  border-bottom: none;
+}
+
+.autocomplete-list li:hover {
+  background-color: #fef3f3;
+}

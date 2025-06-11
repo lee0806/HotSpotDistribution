@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Roboto";
+  display: block; /* ✅ flex 제거 */
+}

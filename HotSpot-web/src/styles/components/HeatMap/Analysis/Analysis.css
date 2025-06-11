@@ -1,0 +1,175 @@
+.Analysis-container {
+    position: fixed;
+    top: 86px;
+    right: 28px;
+    bottom: 86px;
+    width: 380px;
+    max-height: calc(100vh - 172px);
+    padding-top: 19px;
+    padding-bottom: 19px;
+    padding-right: 18px;
+    padding-left: 18px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: white;
+
+    animation: slideIn_2 0.5s forwards;
+}
+
+.Analysis-container.hidden {
+    animation: slideOut_2 0.5s forwards;
+}
+
+@keyframes slideIn_2 {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut_2 {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.toggle-button {
+    position: fixed;
+    top: 50%;
+    right: 390px;
+    transform: translateY(-50%);
+    background-color: #d5d5d5;
+    border-radius: 9999px;
+    width: 18px;
+    height: 32px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Analysis-container.hidden {
+    display: none;
+}
+
+.Analysis-report-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 26px;
+}
+
+.Analysis-section {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 26px;
+}
+
+
+.Analysis-section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.Analysis-type-main {
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.type-highlight {
+    font-size: 20px;
+    font-weight: 700;
+    color: #F28080;   
+}
+
+.type-description {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin-top: 4px;   
+}
+
+.Analysis-additional-description {
+    display: flex;
+    border: 1px solid #d5d5d5;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.Analysis-chart {
+    display: flex;
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+}
+
+.Analysis-line {
+    margin-top: 5px;
+    width: 100%;
+    height: 1px;
+    background-color: #949191;
+
+}
+
+.Profit-loss-calculation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 9px 12px;
+    background-color: white;
+    font-size: 14px;
+    font-weight: 800;
+    color: #000000;
+    border: 1px solid #d5d5d5;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+/* 필터의 유무를 동작시키는 토글 버튼 */
+.Analysis-toggle-button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #F28080;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  z-index: 10;
+  transition: right 0.5s;
+}
+
+.Analysis-toggle-button.hidden {
+    right: 10px;
+}
+
+.Analysis-toggle-button.visible {
+    right: 395px;
+}

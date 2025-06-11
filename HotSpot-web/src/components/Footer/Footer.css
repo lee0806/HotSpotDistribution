@@ -1,0 +1,61 @@
+.footer {
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+}
+
+/* 왼쪽 소개 영역 */
+.footer-left {
+  max-width: 560px;
+}
+
+.footer-title {
+  font-size: 24px;
+  font-weight: 900;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+.footer-subtext {
+  font-size: 14px;
+  color: #8c8c8c;
+  margin-bottom: 8px;
+}
+
+.footer-address {
+  font-size: 14px;
+  color: #8c8c8c;
+  line-height: 1.5;
+}
+
+/* 오른쪽 링크 영역 */
+.footer-right {
+  display: flex;
+  gap: 64px;
+}
+
+/* 각각의 정보 섹션 (서비스 / 팀원) */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.footer-section-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.footer-section-item {
+  font-size: 13px;
+  color: #8c8c8c;
+  margin: 2px 0;
+  line-height: 1.4;
+}

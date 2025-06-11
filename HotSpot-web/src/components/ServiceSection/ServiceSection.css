@@ -1,0 +1,102 @@
+.service-section {
+  width: 100%;
+  background-color: #f3f3f3;
+  padding: 54px 90px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 90px;
+  font-family: Roboto, sans-serif;
+}
+
+/* 헤더 */
+.service-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.service-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.service-line {
+  width: 92px;
+  height: 2px;
+  background-color: #000;
+}
+
+/* 카드 묶음 */
+.service-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  width: 100%;
+  max-width: 1218px;
+}
+
+/* 공통 카드 */
+.service-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  width: 100%;
+
+  /* 애니메이션 초기 상태 */
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  filter: blur(4px);
+
+  transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease;
+  transition-delay: var(--delay, 0s);
+}
+
+.service-card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.service-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-card__image {
+  width: 420px;
+  height: 548px;
+  object-fit: contain;
+}
+
+.service-card__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 470px;
+}
+
+.service-card__title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.service-card__description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.service-card.no-image .service-card__text {
+  align-items: flex-start;
+}

@@ -1,0 +1,93 @@
+.profit-chart-wrapper {
+  width: 95%;
+  height: 509px;
+  margin-left: 28px;
+  margin-top: 32px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  mix-blend-mode: multiply;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 32px;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+.profit-chart-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+.profit-chart-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 240px;
+  gap: 4px; /* 간격 축소 */
+}
+
+.profit-chart-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  line-height: 1.2; /* 줄 간격 조절 */
+}
+
+.profit-chart-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.profit-chart-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  line-height: 1.2;
+}
+
+.profit-chart-value.red {
+  color: #f28080;
+}
+
+.profit-chart-graph {
+  width: 100%;
+  height: 540px; /* 그래프 높이 확장 */
+  border-radius: 20px;
+  overflow: visible; /* 좌우 잘림 방지 */
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.recharts-wrapper {
+  overflow: visible !important;
+}
+
+.recharts-xAxis .recharts-cartesian-axis-label {
+  transform: translateY(25px);
+}
+
+.recharts-yAxis .recharts-cartesian-axis-label {
+  transform: translateY(-25px);
+}
+
+.recharts-cartesian-axis-label {
+  font-size: 14px;
+  font-weight: 500;
+  fill: #333;
+}
+
+.recharts-yAxis .recharts-cartesian-axis-label {
+  transform: translateY(-20px);
+}
+
+.recharts-xAxis .recharts-cartesian-axis-label {
+  transform: translateY(20px);
+}

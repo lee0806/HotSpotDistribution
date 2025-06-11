@@ -1,0 +1,15 @@
+export const industryData = [
+  { code: "CS100001", name: "한식" },
+  { code: "CS100002", name: "중식" },
+  { code: "CS100003", name: "일식" },
+  { code: "CS100004", name: "양식" },
+  { code: "CS100005", name: "제과점" },
+  { code: "CS100006", name: "패스트푸드점" },
+  { code: "CS100007", name: "치킨전문점" },
+  { code: "CS100008", name: "분식전문점" },
+  { code: "CS100009", name: "호프-간이주점" },
+  { code: "CS100010", name: "커피-음료" },
+  { code: "CS200001", name: "PC방" },
+  { code: "CS300001", name: "청과상" },
+  { code: "CS300002", name: "반찬가게" },
+];

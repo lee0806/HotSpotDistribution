@@ -1,0 +1,636 @@
+::-webkit-scrollbar {
+    display: none;
+  }
+
+/* 전체적인 컨테이너 스타일 */
+.Filter-container {
+    top: 86px;
+    left: 28px;
+    bottom: 86px;
+    width: 210px;
+    max-height: calc(100vh - 172px);
+    padding-top: 19px;
+    padding-bottom: 19px;
+    padding-right: 18px;
+    padding-left: 18px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    overflow-y: auto;
+    position: fixed;
+    background-color: white;
+
+    animation: slideIn 0.5s forwards;
+}
+
+
+.Filter-container.hidden {
+    animation: slideOut 0.5s forwards;
+}
+
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* 타이틀 컨테이너 */
+.Title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 미래와 과거의 유동인구 데이터 전환 토글버튼 */
+.toggle-switch {
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 999px;
+    position: relative;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 미래로 전환 시 색 변환 */
+.toggle-switch.미래 {
+    background-color: #F28080;
+}
+
+/* 토글 버튼 스타일 */
+.toggle-knob {
+    width: 26px;
+    height: 26px;
+    top: 2px;
+    left: 2px;
+    background-color: wheat;
+    border-radius: 50%;
+    position: absolute;
+    transition: left 0.3s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* 토글 클릭 시 이동 거리 */
+.toggle-switch.미래 .toggle-knob {
+    left: 32px;
+}
+
+/* 필터 타이틀에 대한 스타일 */
+.Filter-title {
+    font-size: 18px;
+    font-weight: 700;
+    width: 174px;
+    height: 19px;
+    display: flex;
+}
+
+/* 필터별 각 제목에 대한 스타일 */
+.Filter-options-title {
+    font-size: 18px;
+    font-weight: 700;
+    width: 174px;
+    height: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 시간 설정란에 대한 스타일 */
+.Filter-timeset-section {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+
+/* 달 선택에 대한 리스트 */
+.Filter-Month-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* 달 선택 리스트 */
+.Filter-Month-list li {
+    flex: 1;
+}
+/* 선택 버튼에 대한 스타일 */
+.Filter-Month-list li button {
+    padding: 5px;
+    width: 40px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    font-size: 10px;
+    color: #000000;
+    border-radius: 10px;
+}
+
+/* 달 버튼 호버 시 색 변환 */
+.Filter-Month-list li button:hover {
+    color: #F28080;
+    border: 1px solid #F28080;
+}
+
+/* 달 버튼 클릭 시 색 변환 */
+.Filter-Month-list li button.selected {
+    color: #F28080;
+    border: 1px solid #F28080;
+}
+
+/* 평일과 주말 선택 리스트 */
+.Filter-Day-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* 평일과 주말 선택 */
+.Filter-Day-list li {
+    flex: 1;
+}
+
+/* 평일과 주말 선택 버튼 */
+.Filter-Day-list li button {
+    padding: 8px 20px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+    color: #000000;
+    width: 100%;
+}
+
+/* 둥글게 */
+.Filter-Day-list li:last-child button {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* 둥글게 */
+.Filter-Day-list li:first-child button {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+/* 호버 시 색 변환 */
+.Filter-Day-list li button:hover {
+    color: #F28080;
+    border: 1px solid #F28080;
+}
+
+/* 클릭 시 색 변환 */
+.Filter-Day-list li button.selected {
+    color: #F28080;
+    border: 1px solid #F28080;
+}
+
+.Filter-gender-list  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.Filter-gender-list li {
+    flex: 1;
+}
+
+.Filter-gender-list li button {
+    padding: 8px 20px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+    color: #000000;
+    width: 100%;
+}
+
+.Filter-gender-list li:last-child button {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.Filter-gender-list li:first-child button {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.Filter-gender-list li button:hover {
+    color: #F28080;
+    border: 1px solid #F28080;
+}
+
+.Filter-gender-list li button.selected {
+    color: #F28080;
+    border: 1px solid #F28080;
+}
+
+
+/* 성별 선택란에 대한 스타일 */
+.Filter-gender-section {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+/* 성별 선택란 options에 대한 스타일 */
+.Filter-gender-options {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+/* 나이 선택란에 대한 스타일 */
+.Filter-age-section {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+/* 나이 선택란 options에 대한 스타일*/
+.Filter-age-options {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+
+
+/* ====== 연령대 라디오 버튼 스타일 ====== */
+.Filter-age-options input[type="radio"] {
+  display: none;
+}
+
+.Filter-age-options label {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #5f6368;
+  display: flex;
+  align-items: center;
+}
+
+.Filter-age-options label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #F28080;
+  background-color: white;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.Filter-age-options input[type="radio"]:checked + label::before {
+  background-color: #F28080;
+  box-shadow: inset 0 0 0 4px white;
+}
+
+/* 보증금에 대한 스타일 */
+.Filter-deposit-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    
+}
+
+/* 보증금 슬라이더에 대한 스타일 */
+.Filter-deposit-range-wrapper .rc-slider {
+    width: 165px;
+    height: 4px;
+    margin-bottom: 12px;
+}
+
+/* 보증금 슬라이더에 대한 스타일 */
+.Filter-deposit-range-wrapper .rc-slider-rail {
+    height: 4px;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+}
+
+/* 보증금 슬라이더에 대한 스타일 */
+.Filter-deposit-range-wrapper .rc-slider-track {
+    height: 4px;
+    border-radius: 5px;
+    background-color: #F28080;
+}
+
+/* 보증금 슬라이더에 대한 스타일 */
+.Filter-deposit-range-wrapper .rc-slider-handle {
+    width: 14px;
+    height: 14px;
+    margin-top: -5px;
+    border: 1px solid #949191;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+}
+
+/* 보증금 슬라이더에 대한 스타일 */
+.Filter-deposit-range-wrapper .rc-slider-handle:active {
+    opacity: 1;
+    background-color: white;
+    border: 1px solid #949191;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 보증금 슬라이더에 대한 스타일 */
+.Filter-deposit-elements {
+    gap: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 보증금 슬라이더에 대한 스타일 */
+.Filter-deposit-elements-center {
+    font-size: 10px;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+}
+
+/* 보증금 슬라이더에 대한 스타일 */
+.Filter-deposit-elements-left {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 보증금 슬라이더에 대한 스타일 */
+.Filter-deposit-elements-right {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 상권 선택란에 대한 스타일 */
+.Filter-business-district-section {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+/* 상권 선택란에 대한 스타일 */
+.Filter-business-district-options {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+}
+
+/* 상권 선택란에 대한 스타일 */
+.business-district-items {
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    gap: 9px;
+    flex-direction: row;
+    align-items: center;
+    border: #949191 1px solid;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    position: relative;
+}
+
+/* 상권 선택란에 대한 스타일 */
+.business-district-plus {
+    height: 18px;
+    width: 85px;
+    padding: 4px 8px;
+    font-size: 8px;
+    font-weight: 500;
+    color: #949191;
+    display: flex;
+    gap: 9px;
+    flex-direction: row;
+    align-items: center;
+    border: #949191 1px solid;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* 상권 선택란에 대한 스타일 */
+.plus-img {
+    width: 10px;
+    height: 10px;
+}
+
+/* business-submenu 스타일 추가 */
+.business-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #949191;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+    margin-top: 4px;
+    z-index: 10;
+    list-style: none;
+    padding: 4px 0;
+    width: max-content;
+    min-width: 100%;
+}
+
+/* business-submenu li 스타일 */
+.business-submenu li {
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.business-submenu li:hover {
+    background-color: #F28080;
+    color: white;
+}
+
+/* 매출액 산정에 대한 스타일*/
+.Filter-sales-section {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+/* 매출액 산정에 대한 스타일*/
+.sales-input-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* 매출액 산정(input)에 대한 스타일*/
+.sales-input {
+    padding: 7px 30px 7px 7px;
+    width: 100%;
+    border: 2px solid #949191;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 9px;
+    font-weight: 500;
+    color: #949191;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+/* 매출액 산정(button)에 대한 스타일*/
+.sales-button {
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+
+.sales-button-icon {
+    width: 10px;
+    height: 10px;
+    transform: rotate(180deg);
+}
+
+.sales-input::placeholder {
+    font-size: 9px;
+}
+
+/* 숫자 input 화살표 제거 (크롬, 사파리 등) */
+.sales-input::-webkit-outer-spin-button,
+.sales-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*조건 삭제 버튼*/
+.Filter-delete-button {
+    margin: 0 auto;
+    padding: 9px 9px;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    border: 2px solid #949191;
+    background-color: white;
+    border-radius: 15px;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+/* 필터 사이에 존재하는 얇은 선 */
+.Filter-line {
+    width: 100%;
+    height: 1px;
+    background-color: #949191;
+}
+
+/* 필터의 유무를 동작시키는 토글 버튼 */
+.Filter-toggle-button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #F28080;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  z-index: 10;
+  transition: left 0.5s;
+}
+
+.Filter-toggle-button.hidden {
+  left: 10px;
+}
+
+.Filter-toggle-button.visible {
+  left: 220px;
+}
+
+
+
+
+
+/* 연도 선택 드롭다운 스타일 */
+.Year-selector-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Year-selector-label {
+    font-size: 12px;
+    align-items: center;
+}
+
+#year-select {
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 6px 12px;
+    border: 1px solid #949191;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#year-select:hover {
+    border-color: #F28080;
+    color: #F28080;
+}
+
+#year-select:focus {
+    outline: none;
+    border-color: #F28080;
+    box-shadow: 0 0 5px rgba(242, 128, 128, 0.5);
+}

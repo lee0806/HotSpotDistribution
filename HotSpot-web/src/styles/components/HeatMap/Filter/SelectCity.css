@@ -1,0 +1,95 @@
+.map-rapper {
+    position: fixed;
+    top: 107px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.map-state {
+    
+    color: #000000;
+    border: 1px solid #D5D5D5;
+    border-radius: 20px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    background-color: white;
+}
+
+.map-county {
+    
+    color: #000000;
+    border: 1px solid #D5D5D5;
+    border-radius: 20px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 9px;
+    padding-right: 9px;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    background-color: white;
+}
+
+.map-city {
+    
+    position: relative;
+    color: #000000;
+    border: 1px solid #D5D5D5;
+    border-radius: 20px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    background-color: white;
+}
+
+.arrow-img {
+    width: 18px;
+    height: 18px;
+    margin-left: 9px;
+    vertical-align: middle;
+}
+
+.dong-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: auto;
+  margin-top: 5px;
+  padding: 8px 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  list-style: none;
+}
+
+.dong-submenu li {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.dong-submenu li:hover {
+  background-color: #f2f2f2;
+}
