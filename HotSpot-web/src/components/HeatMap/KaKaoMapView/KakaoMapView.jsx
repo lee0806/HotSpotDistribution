@@ -509,14 +509,24 @@ function KakaoMapView({
                   return;
                 }
 
-                if (selectedFilterGender === "남성" && pop.male <= pop.female) {
-                  // 필터가 남성인데 여성의 유동인구가 더 많은 경우 마커를 표시하지 않음, 즉 리턴
-                  return; // 남성 마커만 표시
+                // 평일, 주말, 달별, 필터 구성
+                let maleVal = pop.male;
+                let femaleVal = pop.female;
+
+                if (selectedFilterMonth && selectedFilterDay === "평일") {
+                  maleVal = pop.selectedMonthWeekdayMale;
+                  femaleVal = pop.selectedMonthWeekdayFemale;
+                } else if (selectedFilterMonth && selectedFilterDay === "주말") {
+                  maleVal = pop.selectedMonthWeekendMale;
+                  femaleVal = pop.selectedMonthWeekendFemale;
                 }
 
-                // 필터가 여성인데 남성의 유동인구가 더 많은 경우 마커를 표시하지 않음, 즉 리턴
-                if (selectedFilterGender === "여성" && pop.female <= pop.male) {
-                  return; // 여성 마커만 표시
+                if (selectedFilterGender === "남성" && maleVal <= femaleVal) {
+                  return;
+                }
+
+                if (selectedFilterGender === "여성" && femaleVal <= maleVal) {
+                  return;
                 }
 
                 // (월별 최대 유동인구 top5 필터 제거: 모든 지역 표시)
