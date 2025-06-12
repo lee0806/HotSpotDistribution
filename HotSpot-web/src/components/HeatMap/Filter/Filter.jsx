@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
@@ -36,6 +37,36 @@ function Filter({
     반찬가게: [{ categoryCode: "CS300010", categoryName: "반찬가게" }],
   });
 
+  const navigate = useNavigate();
+
+  // 조건 삭제 핸들러
+  const handleClearFilters = () => {
+    setSelectedFilterGender(null);
+    setSelectedFilterAgeGroup([]);
+    setSelectedCategoryCode(null);
+    setSelectedFilterMonth(null);
+    setSelectedFilterDay(null);
+    setSelectedFilterMaxRent([0, 200000]);
+    setSalesInputTarget(null);
+
+    setSelectBusinessMain("선택");
+    setSelectBusinessSub({
+      categoryCode: "CS100000",
+      categoryName: "선택",
+    });
+    setSelectedYear("2024");
+    setSelectedMonth(null);
+    setSelectedDay(null);
+    setSelectedGender(null);
+    setSelectedAgeGroups([]);
+    setRangeValue(0);
+    setInputSales("");
+    setDepositRangeValue([0, 200000]);
+
+    setPopulationType("2024");
+    navigate("/map");
+  };
+
   // 상권 선택을 위한 상태 변수
   const [selectBusinessMain, setSelectBusinessMain] = useState("선택");
 
@@ -68,7 +99,7 @@ function Filter({
 
   // 슬라이더의 현재 값을 저장하는 상태 변수
   const [rangeValue, setRangeValue] = useState(0);
-              
+
   // 매출액 입력을 위한 상태 변수
   const [inputSales, setInputSales] = useState("");
 
@@ -106,9 +137,13 @@ function Filter({
         <div className="Title-container">
           <div className="Filter-title">필터</div>
           <div className="Year-selector-wrapper">
-            <label 
+            <label
               className="Year-selector-label"
-              htmlFor="year-select" style={{ fontWeight: "bold" }}>연도 선택:</label>
+              htmlFor="year-select"
+              style={{ fontWeight: "bold" }}
+            >
+              연도 선택:
+            </label>
             <select
               id="year-select"
               value={selectedYear}
@@ -117,7 +152,6 @@ function Filter({
               {["2024", "2025", "2026", "2027", "2028"].map((year) => (
                 <option key={year} value={year}>
                   {year}년
-                  
                 </option>
               ))}
             </select>
@@ -413,10 +447,9 @@ function Filter({
 
         {/* button을 통해 조건을 삭제 */}
         <button
+          type="button"
           className="Filter-delete-button"
-          onClick={() => {
-            window.location.reload(); // 페이지를 새로고침하여 모든 필터를 초기화
-          }}
+          onClick={() => handleClearFilters()}
         >
           조건 삭제
         </button>
