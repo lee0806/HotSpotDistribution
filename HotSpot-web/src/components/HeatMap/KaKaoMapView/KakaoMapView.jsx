@@ -3,7 +3,6 @@ import axios from "axios";
 import Papa from "papaparse";
 import { useQuery } from "@tanstack/react-query";
 
-
 // 유동인구 데이터 가져오는 hook
 import {
   usePopulationData,
@@ -388,24 +387,30 @@ function KakaoMapView({
               ),
               fetchAllCategoryData(areaIds),
             ]).then(([populationMap, categoryMap]) => {
-              // 나이별 유동인구 5개
+              // 나이 필터에 따른 매출액 top5
               let top5Ids = null;
 
-              // 나이 필터에 관한 내용
               if (selectedFilterAgeGroup && selectedFilterAgeGroup.length > 0) {
-                console.log("연령대 필터링 시작:", selectedFilterAgeGroup);
+                console.log("연령대 매출 필터링 시작:", selectedFilterAgeGroup);
 
-                const scoredEntries = Object.entries(populationMap).map(
-                  ([id, entry]) => {
-                    const score = selectedFilterAgeGroup.reduce(
-                      (sum, group) => {
-                        const apiKey = AGE_GROUP_KEY_MAP[group];
-                        const value = entry[apiKey] ?? 0;
-                        return sum + value;
-                      },
-                      0
-                    );
-                    return { id, score };
+                const scoredEntries = Object.entries(categoryMap).map(
+                  ([areaId, entry]) => {
+                    let score = 0;
+                    entry.quarters?.forEach((quarter) => {
+                      selectedFilterAgeGroup.forEach((group) => {
+                        const keyMap = {
+                          "10대": "age_10",
+                          "20대": "age_20",
+                          "30대": "age_30",
+                          "40대": "age_40",
+                          "50대": "age_50",
+                          "60대 이상": "age_60",
+                        };
+                        const sales = quarter.ageSales?.[keyMap[group]] || 0;
+                        score += Number(sales);
+                      });
+                    });
+                    return { id: areaId, score };
                   }
                 );
 
@@ -416,7 +421,7 @@ function KakaoMapView({
 
                 top5Ids = new Set(top5);
 
-                console.log("연령대 top5 상권 ID:", top5);
+                console.log("연령대별 매출 top5 상권 ID:", top5);
               }
 
               // 달 별 유동인구에 관한 내용
@@ -491,14 +496,16 @@ function KakaoMapView({
                     ).toLocaleString()}원, 기준: ${parsedSalesTarget.toLocaleString()}원, 범위: ${min.toLocaleString()} ~ ${max.toLocaleString()}`
                   );
                   if (totalSales < min || totalSales > max) {
-                    console.log(" 필터 범위 밖으로 제외됨");
+                    console.log("필터 범위 밖으로 제외됨");
                     return;
                   }
-                  console.log(" 필터 통과");
+                  console.log("필터 통과");
                 } else if (parsedSalesTarget === 0) {
-                  console.log(`[매출 필터 검사] 상권: ${code}, 매출 필터 비활성화`);
+                  console.log(
+                    `[매출 필터 검사] 상권: ${code}, 매출 필터 비활성화`
+                  );
                 } else {
-                  console.log(" 매출 데이터 없음 또는 숫자 변환 실패");
+                  console.log("매출 데이터 없음 또는 숫자 변환 실패");
                   return;
                 }
 
@@ -614,8 +621,12 @@ function KakaoMapView({
                           popData?.selectedMonthTotal || 0
                         ).toLocaleString()}명
                             <br/>
-                            남성: ${Math.round(popData?.male || 0).toLocaleString()}명<br/>
-                            여성: ${Math.round(popData?.female || 0).toLocaleString()}명
+                            남성: ${Math.round(
+                              popData?.male || 0
+                            ).toLocaleString()}명<br/>
+                            여성: ${Math.round(
+                              popData?.female || 0
+                            ).toLocaleString()}명
                           </div>`;
                       } else if (selectedFilterDay === "주말") {
                         populationText = `<div style="margin-top: 6px;">
@@ -623,8 +634,12 @@ function KakaoMapView({
                               popData?.weekendTotal || 0
                             ).toLocaleString()}명
                             <br/>
-                            남성: ${Math.round(popData?.male || 0).toLocaleString()}명<br/>
-                            여성: ${Math.round(popData?.female || 0).toLocaleString()}명
+                            남성: ${Math.round(
+                              popData?.male || 0
+                            ).toLocaleString()}명<br/>
+                            여성: ${Math.round(
+                              popData?.female || 0
+                            ).toLocaleString()}명
                           </div>`;
                       } else if (selectedFilterDay === "평일") {
                         populationText = `<div style="margin-top: 6px;">
@@ -632,8 +647,12 @@ function KakaoMapView({
                               popData?.weekdayTotal || 0
                             ).toLocaleString()}명
                             <br/>
-                            남성: ${Math.round(popData?.male || 0).toLocaleString()}명<br/>
-                            여성: ${Math.round(popData?.female || 0).toLocaleString()}명
+                            남성: ${Math.round(
+                              popData?.male || 0
+                            ).toLocaleString()}명<br/>
+                            여성: ${Math.round(
+                              popData?.female || 0
+                            ).toLocaleString()}명
                           </div>`;
                       } else {
                         populationText = `<div style="margin-top: 6px;">
@@ -641,8 +660,12 @@ function KakaoMapView({
                               popData?.total || 0
                             ).toLocaleString()}명
                             <br/>
-                            남성: ${Math.round(popData?.male || 0).toLocaleString()}명<br/>
-                            여성: ${Math.round(popData?.female || 0).toLocaleString()}명
+                            남성: ${Math.round(
+                              popData?.male || 0
+                            ).toLocaleString()}명<br/>
+                            여성: ${Math.round(
+                              popData?.female || 0
+                            ).toLocaleString()}명
                           </div>`;
                       }
                       const content = `<div style="
@@ -654,7 +677,9 @@ function KakaoMapView({
                         margin-bottom: 100px;
                         box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
                         font-family: 'Pretendard', sans-serif;">
-                        <div style="font-weight: 700;">${item["상권_코드_명_x"]}</div>
+                        <div style="font-weight: 700;">${
+                          item["상권_코드_명_x"]
+                        }</div>
                         <div style="position: absolute; top: 6px; right: 6px; font-size: 12px; color: gray;">
                           ${yearText}
                         </div>
