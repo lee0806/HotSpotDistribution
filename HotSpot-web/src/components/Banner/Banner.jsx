@@ -13,7 +13,7 @@ function Banner() {
   return (
     <div className="Banner-container">
       <div className="navigater">
-        <img className="logo" src="src/assets/logo.png" alt="logo" onClick={() => goTo("/")} />
+        <img className="logo" src="/assets/logo.png" alt="logo" onClick={() => goTo("/")} />
         <div className="navi-items">
           <div className={`navi-item ${isActive("/map") ? "active" : ""}`} onClick={() => goTo("/map")}>
             지도
