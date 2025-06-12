@@ -764,7 +764,7 @@ function Analysis({ selectedMarker, selectedId }) {
               해당 지역에 대한 종합 평가 입니다.
             </p>
             <p>
-              ●&nbsp;유동인구는
+              ●&nbsp;유동인구는&nbsp;
               <span style={{ fontWeight: 800, color: "#F28080" }}>
                 {currentPopulation > forecastPopulation
                   ? "감소할 것"
@@ -777,14 +777,14 @@ function Analysis({ selectedMarker, selectedId }) {
               <span style={{ fontWeight: 800, color: "#F28080" }}>
                 {dayLabels[(salesByDayData || []).indexOf(maxDay)]}
               </span>
-              에 매출이 가장 높아요. 이날에 유리한 업종을 고려해보세요.
+              &nbsp;에 매출이 가장 높아요. 이날에 유리한 업종을 고려해보세요.
             </p>
             <p>
-              ●&nbsp;평당 임대료는
+              ●&nbsp;평당 임대료는&nbsp;
               <span style={{ fontWeight: 800, color: "#F28080" }}>
                 {averageRentText}
               </span>
-              &nbsp;이며 매출액은
+              &nbsp;이며 매출액은&nbsp;
               <span style={{ fontWeight: 800, color: "#F28080" }}>
                 {totalSalesData !== null
                   ? `${totalSalesData.toLocaleString()}만원`
