@@ -748,7 +748,8 @@ function Analysis({ selectedMarker, selectedId }) {
       >
         {/* 분석 리포트 제목 */}
         <div className="Analysis-report-title">
-          분석 리포트 {`${selectedMarker}`} {`${selectedId}`}
+          분석 리포트 {`${selectedMarker}`}
+          {/* {`${selectedId}`} */}
         </div>
 
         <div className="Analysis-section">
@@ -826,13 +827,17 @@ function Analysis({ selectedMarker, selectedId }) {
             <div className="type-description">유동인구 수는 일 평균</div>
             <span className="type-highlight">
               &nbsp;
-              {currentPopulation !== null ? `${currentPopulation.toLocaleString()}명` : "-"}
+              {currentPopulation !== null
+                ? `${currentPopulation.toLocaleString()}명`
+                : "-"}
               &nbsp;
             </span>
             <div className="type-description">이고 앞으로</div>
             <div className="type-highlight">
               &nbsp;
-              {forecastPopulation !== null ? `${forecastPopulation.toLocaleString()}명` : "-"}
+              {forecastPopulation !== null
+                ? `${forecastPopulation.toLocaleString()}명`
+                : "-"}
               &nbsp;
             </div>
             <div className="type-description">으로</div>
