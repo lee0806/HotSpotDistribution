@@ -491,14 +491,14 @@ function KakaoMapView({
                     ).toLocaleString()}원, 기준: ${parsedSalesTarget.toLocaleString()}원, 범위: ${min.toLocaleString()} ~ ${max.toLocaleString()}`
                   );
                   if (totalSales < min || totalSales > max) {
-                    console.log("❌ 필터 범위 밖으로 제외됨");
+                    console.log(" 필터 범위 밖으로 제외됨");
                     return;
                   }
-                  console.log("✅ 필터 통과");
+                  console.log(" 필터 통과");
                 } else if (parsedSalesTarget === 0) {
                   console.log(`[매출 필터 검사] 상권: ${code}, 매출 필터 비활성화`);
                 } else {
-                  console.log("❌ 매출 데이터 없음 또는 숫자 변환 실패");
+                  console.log(" 매출 데이터 없음 또는 숫자 변환 실패");
                   return;
                 }
 
@@ -533,7 +533,7 @@ function KakaoMapView({
                 if (selectedFilterGender === "남성") {
                   markerImageSrc = "/assets/images/marker_man.png";
                 } else if (selectedFilterGender === "여성") {
-                  markerImageSrc = "/src/assets/images/marker.png";
+                  markerImageSrc = "/assets/images/marker.png";
                 } else if (pop) {
                   const male = Number(pop.male);
                   const female = Number(pop.female);

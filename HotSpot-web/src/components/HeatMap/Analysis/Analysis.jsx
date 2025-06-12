@@ -593,7 +593,7 @@ function Analysis({ selectedMarker, selectedId }) {
     labels: genderData.map((item) => item.name),
     datasets: [
       {
-        label: "이용 성별 비율",
+        label: "이용 성별 유동인구",
         data: genderData.map((item) => item.value),
         backgroundColor: ["#007bff", "#fdaba2"],
       },
@@ -607,7 +607,7 @@ function Analysis({ selectedMarker, selectedId }) {
         labels: salesRankData.map((item) => item.name),
         datasets: [
           {
-            label: "업종별 매출 순위",
+            label: "업종별 매출액",
             data: salesRankData.map((item) => item.value),
             backgroundColor: salesRankData.map((_, idx) =>
               idx === 0 ? "#fdaba2" : "#007bff"
@@ -689,7 +689,7 @@ function Analysis({ selectedMarker, selectedId }) {
       : [],
     datasets: [
       {
-        label: "이용 성별 비율",
+        label: "이용 성별 매출",
         data: Array.isArray(genderSalesData)
           ? genderSalesData.map((item) => item.value)
           : [],
@@ -782,7 +782,7 @@ function Analysis({ selectedMarker, selectedId }) {
             <p>
               ●&nbsp;평당 임대료는&nbsp;
               <span style={{ fontWeight: 800, color: "#F28080" }}>
-                {averageRentText}
+                {averageRentText.toLocaleString()}
               </span>
               &nbsp;이며 매출액은&nbsp;
               <span style={{ fontWeight: 800, color: "#F28080" }}>
@@ -826,13 +826,13 @@ function Analysis({ selectedMarker, selectedId }) {
             <div className="type-description">유동인구 수는 일 평균</div>
             <span className="type-highlight">
               &nbsp;
-              {currentPopulation !== null ? `${currentPopulation}명` : "-"}
+              {currentPopulation !== null ? `${currentPopulation.toLocaleString()}명` : "-"}
               &nbsp;
             </span>
             <div className="type-description">이고 앞으로</div>
             <div className="type-highlight">
               &nbsp;
-              {forecastPopulation !== null ? `${forecastPopulation}명` : "-"}
+              {forecastPopulation !== null ? `${forecastPopulation.toLocaleString()}명` : "-"}
               &nbsp;
             </div>
             <div className="type-description">으로</div>
@@ -1060,9 +1060,9 @@ function Analysis({ selectedMarker, selectedId }) {
             <div className="type-description">입니다.</div>
           </div>
 
-          <div className="Analysis-additional-description">
+          {/* <div className="Analysis-additional-description">
             2개월 뒤 평균 임대로는 약 3% 상승 예정입니다.
-          </div>
+          </div> */}
 
           <div className="Analysis-chart">
             {" "}
@@ -1087,10 +1087,6 @@ function Analysis({ selectedMarker, selectedId }) {
               &nbsp;
             </div>
             <div className="type-description">입니다.</div>
-          </div>
-
-          <div className="Analysis-additional-description">
-            2개월 뒤 평균 매출액은 약 10% 하락 예정입니다.
           </div>
 
           <div className="Analysis-chart">
