@@ -607,7 +607,7 @@ function Analysis({ selectedMarker, selectedId }) {
         labels: salesRankData.map((item) => item.name),
         datasets: [
           {
-            label: "업종별 매출액",
+            label: "업종별 매출",
             data: salesRankData.map((item) => item.value),
             backgroundColor: salesRankData.map((_, idx) =>
               idx === 0 ? "#fdaba2" : "#007bff"
