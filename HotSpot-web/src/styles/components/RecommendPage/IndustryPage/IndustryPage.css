@@ -1,9 +1,8 @@
 .recommend-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100%;
     width: 100vw;
-
     padding: 64px;
 }
 
@@ -109,32 +108,27 @@
 }
 
 .card-container {
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
     overflow-x: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* white-space: nowrap; */
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 75%;
 }
 
 .card-row {
-    display: flex;
+    display: inline-flex;
+    
     flex-direction: row;
     flex-wrap: nowrap;
     scroll-behavior: smooth;
-    scroll-padding: 64px;
     gap: 20px;
+    padding: 20px;
+
     width: fit-content;
-    
-    margin: 81px 10px;
 }
 
 
 .card {
-
-
+    flex: 0 0 auto;
     display: flex; /* 카드 너비 조정 */
     flex-direction: column;
     min-width: 425px; /* 최소 너비 설정 */
