@@ -19,7 +19,7 @@ const services = [
     title: "업종별 창업 추천",
     description:
       "지역에 따라 어떤 업종이 잘 되는지 알려드려요.\n창업 전에 미리 검토해보세요.",
-    link: "/forecast",
+    link: "/select",
   },
   {
     image: dataImg,
