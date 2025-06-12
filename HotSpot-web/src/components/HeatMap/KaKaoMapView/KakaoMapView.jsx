@@ -584,13 +584,13 @@ function KakaoMapView({
                         populationText = `<div style="margin-top: 6px;">
                           총 유동인구(${selectedFilterMonth} 주말): ${Math.round(
                           popData?.selectedMonthWeekendTotal || 0
-                        )}명<br/>
+                        ).toLocaleString()}명<br/>
                           남성: ${Math.round(
                             popData?.selectedMonthWeekendMale || 0
-                          )}명<br/>
+                          ).toLocaleString()}명<br/>
                           여성: ${Math.round(
                             popData?.selectedMonthWeekendFemale || 0
-                          )}명
+                          ).toLocaleString()}명
                         </div>`;
                       } else if (
                         selectedFilterMonth &&
@@ -599,49 +599,49 @@ function KakaoMapView({
                         populationText = `<div style="margin-top: 6px;">
                           총 유동인구(${selectedFilterMonth} 평일): ${Math.round(
                           popData?.selectedMonthWeekdayTotal || 0
-                        )}명<br/>
+                        ).toLocaleString()}명<br/>
                           남성: ${Math.round(
                             popData?.selectedMonthWeekdayMale || 0
-                          )}명<br/>
+                          ).toLocaleString()}명<br/>
                           여성: ${Math.round(
                             popData?.selectedMonthWeekdayFemale || 0
-                          )}명
+                          ).toLocaleString()}명
                         </div>`;
                       } else if (selectedFilterMonth) {
                         populationText = `<div style="margin-top: 6px;">
                             총 유동인구(${selectedFilterMonth}): ${Math.round(
                           popData?.selectedMonthTotal || 0
-                        )}명
+                        ).toLocaleString()}명
                             <br/>
-                            남성: ${Math.round(popData?.male || 0)}명<br/>
-                            여성: ${Math.round(popData?.female || 0)}명
+                            남성: ${Math.round(popData?.male || 0).toLocaleString()}명<br/>
+                            여성: ${Math.round(popData?.female || 0).toLocaleString()}명
                           </div>`;
                       } else if (selectedFilterDay === "주말") {
                         populationText = `<div style="margin-top: 6px;">
                             총 유동인구(주말): ${Math.round(
                               popData?.weekendTotal || 0
-                            )}명
+                            ).toLocaleString()}명
                             <br/>
-                            남성: ${Math.round(popData?.male || 0)}명<br/>
-                            여성: ${Math.round(popData?.female || 0)}명
+                            남성: ${Math.round(popData?.male || 0).toLocaleString()}명<br/>
+                            여성: ${Math.round(popData?.female || 0).toLocaleString()}명
                           </div>`;
                       } else if (selectedFilterDay === "평일") {
                         populationText = `<div style="margin-top: 6px;">
                             총 유동인구(평일): ${Math.round(
                               popData?.weekdayTotal || 0
-                            )}명
+                            ).toLocaleString()}명
                             <br/>
-                            남성: ${Math.round(popData?.male || 0)}명<br/>
-                            여성: ${Math.round(popData?.female || 0)}명
+                            남성: ${Math.round(popData?.male || 0).toLocaleString()}명<br/>
+                            여성: ${Math.round(popData?.female || 0).toLocaleString()}명
                           </div>`;
                       } else {
                         populationText = `<div style="margin-top: 6px;">
                             총 유동인구(평균): ${Math.round(
                               popData?.total || 0
-                            )}명
+                            ).toLocaleString()}명
                             <br/>
-                            남성: ${Math.round(popData?.male || 0)}명<br/>
-                            여성: ${Math.round(popData?.female || 0)}명
+                            남성: ${Math.round(popData?.male || 0).toLocaleString()}명<br/>
+                            여성: ${Math.round(popData?.female || 0).toLocaleString()}명
                           </div>`;
                       }
                       const content = `<div style="
@@ -658,7 +658,7 @@ function KakaoMapView({
                           ${yearText}
                         </div>
                         
-                        ${populationText}
+                        ${populationText.toLocaleString()}
                         
                       </div>`;
 
