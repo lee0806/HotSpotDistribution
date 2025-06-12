@@ -413,6 +413,10 @@
 
 /* 상권 선택란에 대한 스타일 */
 .business-district-items {
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: ellipsis;
+    max-width: 90px;
     padding: 4px 8px;
     font-size: 12px;
     font-weight: 500;
@@ -426,6 +430,15 @@
     cursor: pointer;
     position: relative;
 }
+
+.business-district-items span {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
 
 /* 상권 선택란에 대한 스타일 */
 .business-district-plus {

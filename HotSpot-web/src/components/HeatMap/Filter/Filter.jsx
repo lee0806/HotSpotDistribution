@@ -342,7 +342,7 @@ function Filter({
                 setShowDropdown((prev) => (prev === "main" ? null : "main"))
               }
             >
-              {selectBusinessMain}
+              <span>{selectBusinessMain}</span>
               <img
                 src="/assets/icons/arrow.svg"
                 alt="화살표"
@@ -373,7 +373,7 @@ function Filter({
                 setShowDropdown((prev) => (prev === "sub" ? null : "sub"))
               }
             >
-              {selectBusinessSub?.categoryName || ""}
+              <span>{selectBusinessSub?.categoryName || ""}</span>
               <img
                 src="/assets/icons/arrow.svg"
                 alt="화살표"
@@ -395,7 +395,7 @@ function Filter({
                         setShowDropdown(null);
                       }}
                     >
-                      {sub.categoryName}
+                      <span>{sub.categoryName}</span>
                     </li>
                   ))}
                 </ul>

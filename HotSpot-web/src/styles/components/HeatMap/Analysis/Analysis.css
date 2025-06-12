@@ -117,6 +117,17 @@
     font-weight: 500;
 }
 
+.Analysis-additional-all {
+    display: inline;
+    border: 1px solid #d5d5d5;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
 .Analysis-chart {
     display: flex;
     border: 1px solid #d5d5d5;
