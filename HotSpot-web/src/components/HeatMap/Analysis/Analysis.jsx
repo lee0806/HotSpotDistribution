@@ -423,7 +423,8 @@ function Analysis({ selectedMarker, selectedId }) {
         });
       });
 
-      const monthlyAvg = monthlyCount > 0 ? Math.round(monthlySum / monthlyCount / 10000) : 0;
+      const monthlyAvg =
+        monthlyCount > 0 ? Math.round(monthlySum / monthlyCount / 10000) : 0;
       setTotalSalesData(monthlyAvg);
     }
   }, [totalSalesDataRaw]);
@@ -748,6 +749,50 @@ function Analysis({ selectedMarker, selectedId }) {
         {/* 분석 리포트 제목 */}
         <div className="Analysis-report-title">
           분석 리포트 {`${selectedMarker}`} {`${selectedId}`}
+        </div>
+
+        <div className="Analysis-section">
+          <div className="Analysis-section-title">종합 평가</div>
+          <div
+            className="Analysis-additional-all"
+            style={{
+              fontWeight: 500,
+              backgroundColor: "rgba(209, 209, 209, 0.33)",
+            }}
+          >
+            <p style={{ fontWeight: 700, fontSize: "18px" }}>
+              해당 지역에 대한 종합 평가 입니다.
+            </p>
+            <p>
+              ●&nbsp;유동인구는
+              <span style={{ fontWeight: 800, color: "#F28080" }}>
+                {currentPopulation > forecastPopulation
+                  ? "감소할 것"
+                  : "증가할 것"}{" "}
+              </span>
+              으로 예상됩니다.
+            </p>
+            <p>
+              ●&nbsp;
+              <span style={{ fontWeight: 800, color: "#F28080" }}>
+                {dayLabels[(salesByDayData || []).indexOf(maxDay)]}
+              </span>
+              에 매출이 가장 높아요. 이날에 유리한 업종을 고려해보세요.
+            </p>
+            <p>
+              ●&nbsp;평당 임대료는
+              <span style={{ fontWeight: 800, color: "#F28080" }}>
+                {averageRentText}
+              </span>
+              &nbsp;이며 매출액은
+              <span style={{ fontWeight: 800, color: "#F28080" }}>
+                {totalSalesData !== null
+                  ? `${totalSalesData.toLocaleString()}만원`
+                  : "-"}
+              </span>
+              &nbsp;입니다.
+            </p>
+          </div>
         </div>
 
         {/* 업종별 분포 내용 */}
