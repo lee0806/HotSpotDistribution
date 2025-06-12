@@ -530,7 +530,7 @@ function KakaoMapView({
                 // 마커 이미지 경로 설정, 남자와 여자 이미지 다르게
                 let markerImageSrc = "";
                 if (selectedFilterGender === "남성") {
-                  markerImageSrc = "/src/assets/images/marker_man.png";
+                  markerImageSrc = "/assets/images/marker_man.png";
                 } else if (selectedFilterGender === "여성") {
                   markerImageSrc = "/src/assets/images/marker.png";
                 } else if (pop) {
@@ -538,9 +538,9 @@ function KakaoMapView({
                   const female = Number(pop.female);
 
                   if (male > female) {
-                    markerImageSrc = "/src/assets/images/marker_man.png";
+                    markerImageSrc = "/assets/images/marker_man.png";
                   } else {
-                    markerImageSrc = "/src/assets/images/marker.png";
+                    markerImageSrc = "/assets/images/marker.png";
                   }
                 }
 
