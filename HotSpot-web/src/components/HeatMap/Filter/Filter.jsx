@@ -310,7 +310,7 @@ function Filter({
             >
               {selectBusinessMain}
               <img
-                src="/src/assets/icons/arrow.svg"
+                src="/assets/icons/arrow.svg"
                 alt="화살표"
                 className="arrow-img"
               />
@@ -341,7 +341,7 @@ function Filter({
             >
               {selectBusinessSub?.categoryName || ""}
               <img
-                src="/src/assets/icons/arrow.svg"
+                src="/assets/icons/arrow.svg"
                 alt="화살표"
                 className="arrow-img"
               />
@@ -400,7 +400,7 @@ function Filter({
                     }}
                   >
                     <img
-                      src="/src/assets/icons/arrow.svg"
+                      src="/assets/icons/arrow.svg"
                       alt="화살표"
                       className="sales-button-icon"
                     />

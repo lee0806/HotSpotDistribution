@@ -65,7 +65,7 @@ function SelectCity({ map }) {
         <div className="map-state">
           서울 특별시
           <img
-            src="/src/assets/icons/arrow.svg"
+            src="/assets/icons/arrow.svg"
             alt="화살표"
             className="arrow-img"
           />
@@ -73,7 +73,7 @@ function SelectCity({ map }) {
         <div className="map-county">
           도봉구
           <img
-            src="/src/assets/icons/arrow.svg"
+            src="/assets/icons/arrow.svg"
             alt="화살표"
             className="arrow-img"
           />
@@ -84,7 +84,7 @@ function SelectCity({ map }) {
         >
           {selectDong}
           <img
-            src="/src/assets/icons/arrow.svg"
+            src="/assets/icons/arrow.svg"
             alt="화살표"
             className="arrow-img"
           />

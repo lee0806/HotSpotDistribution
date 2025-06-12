@@ -16,7 +16,7 @@ function Select() {
             className="select-card-item"
             onClick={() => goTo("/localRecommendPage")}
           >
-            <img src="/src/assets/icons/map.svg" alt="map" className="icon" />
+            <img src="/assets/icons/map.svg" alt="map" className="icon" />
             <div className="card-text">장소를 고민하고 있어요.</div>
           </button>
 
@@ -25,7 +25,7 @@ function Select() {
             onClick={() => goTo("/IndustryPage")}
           >
             <img
-              src="/src/assets/icons/building.svg"
+              src="/assets/icons/building.svg"
               alt="building"
               className="icon"
             />

@@ -135,11 +135,11 @@ function IndustryPage() {
         <div className="select-wrapper">
           <div className="select-city">
             서울특별시
-            <img src="/src/assets/icons/arrow.svg" alt="arrow" />
+            <img src="/assets/icons/arrow.svg" alt="arrow" />
           </div>
           <div className="select-dong">
             도봉구
-            <img src="/src/assets/icons/arrow.svg" alt="arrow" />
+            <img src="/assets/icons/arrow.svg" alt="arrow" />
           </div>
         </div>
 
@@ -158,35 +158,35 @@ function IndustryPage() {
                     <div className="card-number">
                       {index === 0 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/coffee.svg"
+                          src="/assets/icons/IndustryPageIcon/coffee.svg"
                           alt="coffee"
                           className="card-icon"
                         />
                       )}
                       {index === 1 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/hamburger.svg"
+                          src="/assets/icons/IndustryPageIcon/hamburger.svg"
                           alt="hamburger"
                           className="card-icon"
                         />
                       )}
                       {index === 2 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/rice-bowl.svg"
+                          src="/assets/icons/IndustryPageIcon/rice-bowl.svg"
                           alt="rice_bowl"
                           className="card-icon"
                         />
                       )}
                       {index === 3 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/store.svg"
+                          src="/assets/icons/IndustryPageIcon/store.svg"
                           alt="store"
                           className="card-icon"
                         />
                       )}
                       {index === 4 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/bread-slice.svg"
+                          src="/assets/icons/IndustryPageIcon/bread-slice.svg"
                           alt="bread-slice"
                           className="card-icon"
                         />
@@ -268,35 +268,35 @@ function IndustryPage() {
                     <div className="card-number">
                       {index === 0 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/pig_line.svg"
+                          src="/assets/icons/IndustryPageIcon/pig_line.svg"
                           alt="pig_liner"
                           className="card-icon"
                         />
                       )}
                       {index === 1 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/sushi-roll.svg"
+                          src="/assets/icons/IndustryPageIcon/sushi-roll.svg"
                           alt="sushi-roll"
                           className="card-icon"
                         />
                       )}
                       {index === 2 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/coffee.svg"
+                          src="/assets/icons/IndustryPageIcon/coffee.svg"
                           alt="coffee"
                           className="card-icon"
                         />
                       )}
                       {index === 3 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/bowling-ball.svg"
+                          src="/assets/icons/IndustryPageIcon/bowling-ball.svg"
                           alt="bowling-ball"
                           className="card-icon"
                         />
                       )}
                       {index === 4 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/mood-heart.svg"
+                          src="/assets/icons/IndustryPageIcon/mood-heart.svg"
                           alt="mood-heart"
                           className="card-icon"
                         />
@@ -380,35 +380,35 @@ function IndustryPage() {
                     <div className="card-number">
                       {index === 0 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/pencil-01.svg"
+                          src="/assets/icons/IndustryPageIcon/pencil-01.svg"
                           alt="pencil-01"
                           className="card-icon"
                         />
                       )}
                       {index === 1 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/books.svg"
+                          src="/assets/icons/IndustryPageIcon/books.svg"
                           alt="books"
                           className="card-icon"
                         />
                       )}
                       {index === 2 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/dish_cover_line.svg"
+                          src="/assets/icons/IndustryPageIcon/dish_cover_line.svg"
                           alt="dish_cover_line"
                           className="card-icon"
                         />
                       )}
                       {index === 3 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/bear-smile-line.svg"
+                          src="/assets/icons/IndustryPageIcon/bear-smile-line.svg"
                           alt="bear-smile-line"
                           className="card-icon"
                         />
                       )}
                       {index === 4 && (
                         <img
-                          src="src/assets/icons/industryPageIcon/camera-01.svg"
+                          src="/assets/icons/IndustryPageIcon/camera-01.svg"
                           alt="camera-01"
                           className="card-icon"
                         />

@@ -145,7 +145,7 @@ function LocalPage() {
                   <div key={index} className={`card card-${index + 1}`}>
                     <div className="card-number">
                       <img
-                        src="src/assets/icons/coffee.svg"
+                        src="/assets/icons/coffee.svg"
                         alt="coffee"
                         className="card-icon"
                       />
@@ -239,7 +239,7 @@ function LocalPage() {
                   <div key={index} className={`card card-second-${index + 1}`}>
                     <div className="card-number">
                       <img
-                        src="src/assets/icons/beer.svg"
+                        src="/assets/icons/beer.svg"
                         alt="beer"
                         className="card-icon"
                       />
@@ -376,7 +376,7 @@ function LocalPage() {
                   <div key={index} className={`card card-third-${index + 1}`}>
                     <div className="card-number">
                       <img
-                        src="src/assets/icons/pencil.svg"
+                        src="/assets/icons/pencil.svg"
                         alt="pencil"
                         className="card-icon"
                       />

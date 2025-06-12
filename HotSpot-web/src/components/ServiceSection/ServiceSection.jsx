@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ServiceSection.css";
 
-import populationImg from "../../assets/images/population.png";
-import forecastImg from "../../assets/images/forecast.png";
-import dataImg from "../../assets/images/data.png";
+import populationImg from "/assets/images/population.png";
+import forecastImg from "/assets/images/forecast.png";
+import dataImg from "/assets/images/data.png";
 
 const services = [
   {
